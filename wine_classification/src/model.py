@@ -1,4 +1,3 @@
-from typing import Optional
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
@@ -8,10 +7,10 @@ from .config import RANDOM_STATE
 def train_random_forest(
     X_train: pd.DataFrame,
     y_train: pd.Series,
-    X_val: Optional[pd.DataFrame] = None,
-    y_val: Optional[pd.Series] = None,
+    X_val: pd.DataFrame,
+    y_val: pd.Series,
+    max_depth: int ,
     n_estimators: int = 200,
-    max_depth: Optional[int] = None,
     random_state: int = RANDOM_STATE,
 ) -> RandomForestClassifier:
     """
@@ -57,3 +56,4 @@ def evaluate_on_test(
         "accuracy": test_acc,
         "confusion_matrix": cm,
     }
+
