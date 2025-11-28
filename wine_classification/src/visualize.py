@@ -1,12 +1,12 @@
-from typing import Optional, Sequence
+from typing import List
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.ensemble import RandomForestClassifier
 
 def plot_feature_importances(
     model: RandomForestClassifier,
-    feature_names: Sequence[str],
-    top_n: Optional[int] = None,
+    feature_names: List[str],
+    top_n: int,
     title: str = "RF Feature Importances",
 ):
     """
@@ -28,3 +28,4 @@ def plot_feature_importances(
     plt.title(title)
     plt.tight_layout()
     plt.show()
+
